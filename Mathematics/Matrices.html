@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PhoDocs</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="../index.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <h1>PhoDocs<h1>
+                    <div class="links">
+                        <a class="abc" href="../index.html">Home</a>
+                        <a href="../about.html">About</a>
+                        <a href="../contact.html">Contact</a>
+                    </div>
+        </div>
+        <div class="docContent">
+            <h1>Matrices</h1><br />
+            <h2>Definition</h2><br />
+            A matrix is rectangular array of items. Matrices are usually names with capital letters and are often shown like this below.<br />
+            This is an example of a n by m matrix. Matrices can play crucial roles in many problems like coupled oscillations, rigid body dynamics, ray transfer matrix analysis in optics, some problems that are solved for a limited number of objects need matrixes to be solved generally for N objects, ...<br />
+            Sometimes the dimentions of the matrix is written in subscript of It's name, like below.
+            \[ A_{n \times m} = \begin{bmatrix}
+            a_{11} & a_{12} & a_{13} &  &  &  & a_{1m} \\
+            a_{21} & a_{22} & a_{23} & . & . & . & a_{2m} \\
+             & . &  & . &  &  & . \\
+             & . &  &  & . &  & . \\
+             & . &  &  &  & . & . \\
+            a_{n1} & a_{n2} & a_{n3} & . & . & . & a_{1m}
+            \end{bmatrix} \]
+            <h2>Some terminology</h2><br />
+            
+            <li>Column matrix: a matrix which is constructed by only on column and n rows.<br /></li>
+            <li>Row matrix: a matrix which is contructed by only on row and m column.<br /></li>
+            <li>Square matrix: when n = m the matrix is called a square matrix.<br /></li>
+            <li>Binary matrix: each element is either zero or one. \(a_{ij}=0\) | \(a_{ij}=1\)<br /></li>
+            <div style="text-align: center;">
+            \(
+            A = \begin{bmatrix} a_{1} & a_{2} & a_{3} & . & . & . & a_{m} \end{bmatrix} 
+            \)
+            ,
+            \(
+            B = \begin{bmatrix} a_{1} \\ a_{2} \\ . \\ . \\ . \\ a_{n} \end{bmatrix} 
+            \)
+            ,
+            \(
+            C = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 1 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 1 & 0 & 1 & 1 \end{bmatrix} 
+            \)
+            </div>
+            <br />
+            <li>Identity matrix: a square matrix usually shown with letter I, which \(I_{ij} = 0 ( i \neq j ) \) and \( I_{ii} = 1\)</li>
+            \[
+            I_4 = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} 
+            \]
+            <h2>Matrix operations</h2><br />
+            <h3>addition and subtraction</h3><br />
+            A and B must have same n and m to be added or subtracted.<br />
+            \[(A + B)_{ij} = a_{ij} + b_{ij} \Rightarrow A_{n\times m} + B_{n\times m} = \begin{bmatrix}
+            a_{11} + b_{11} & a_{12} + b_{12} & a_{13} + b_{13} &  &  &  & a_{1m} + a_{1m} \\
+            a_{21} + b_{21} & a_{22} + b_{22} & a_{23} + b_{23} & . & . & . & a_{2m} + a_{2m} \\
+             & . &  & . &  &  & . \\
+             & . &  &  & . &  & . \\
+             & . &  &  &  & . & . \\
+            a_{n1} + a_{n1} & a_{n2} + a_{n2} & a_{n3} + a_{n3} & . & . & . & a_{1m} + a_{1m}
+            \end{bmatrix} \] <br />
+            <h3>multipication</h3> <br />
+            A's number of columns should be same as B's number of rows to multiply A by B.<br />
+            let's assume the dimentions of A and B are given as this:<br />
+            \[A = A_{s \times n} \]\[ B = B_{n \times k}\]
+            \[(A \cdot B)_{ij}=\sum_{z=1}^{n}a_{iz}b_{zj}\]<br />
+            A times B might not be equal to B times A<br />
+            If A is a square matrix then: \(A \cdot I = A\) and \(I \cdot A = A\)
+            <br /><br />
+            <h3>Transposition</h3><br />
+            Transpose of a matrix A is shown by \(A^T\) and is defined as:<br />
+            \[{A^T}_{ij} = A_{ji}\]
+            therefore transpose of an n by m matrix is an m by n matrix.<br />
+            Important identity:
+            \[(AB)^T=B^TA^T\]
+            Proof:<br />
+            we will prove the identity by showing that an arbitrary element of the left-side of equation is eqaul to the right-side's element in same position.<br />
+            defining dimentions as following:<br />
+            \(A = A_{s \times n}\) and \(B = B_{n \times k}\)
+            \[(AB)_{ij}^T = (AB)_{ji} = \sum_{z=1}^{n}A_{jz}B_{zi} = \sum_{z=1}^{n}B_{zi}A_{jz} = \sum_{z=1}^{n}{B^T}_{iz}{A^T}_{zj} = (B^TA^T)_{ij} \]
+            \[\Rightarrow (AB)^T=B^TA^T\]
+            <br />
+            
+            <h3>Determinant</h3><br />
+            Determinant of a square matrix is a scalar value and is usually shown by \(|A|\) or \(det(A)\).<br />
+            One way to define the determinant is the following:
+            First we define A^{ij} = the n-1 by n-1 matrix resulted in deleting the i-th row and j-th column.<br />
+            there is recursive equation for det(A):
+            \[det(A) = a_{11} det(A^{11}) - a_{12} det(A^{12}) + ... + (-1)^{m+1} a_{1m} det(A^{1m})\]
+            or more generally you can choose the i-th row and write determinant like this:<br />
+            \[det(A) = a_{i1} det(A^{i1}) - a_{i2} det(A^{i2}) + ... + (-1)^{m+1} a_{im} det(A^{im}) = \sum_{z=1}^{m}(-1)^{z+1}a_{iz}det(A^{iz})\]
+            or choosing the j-th column then:<br />
+            \[det(A) = a_{1j} det(A^{1j}) - a_{2j} det(A^{2j}) + ... + (-1)^{n+1} a_{nj} det(A^{nj}) = \sum_{z=1}^{n}(-1)^{z+1}a_{zj}det(A^{zj})\]
+            the determinant is zero if and only if one or more rows/columns of the matrix is linearly dependent on other rows/column.<br />
+            example:<br />
+            \[ det(\begin{bmatrix}1 & 2 & 0 \\ -1 & 3 & 2 \\ 1 & -1 & 4\end{bmatrix}) =
+            1 \cdot det ( \begin{bmatrix}3 & 2 \\ -1 & 4\end{bmatrix} )
+            -2 \cdot det ( \begin{bmatrix}-1 & 2 \\ 1 & 4\end{bmatrix} )
+            + 0 \cdot det ( \begin{bmatrix}-1 & 3 \\ 1 & -1\end{bmatrix} ) \]
+            \[=1 \times (3 \times 4 - ( - 2 ) ) + (-2) \times (-4 -2) = 14 + 12 = 26\]
+            <br /><br />
+            <h3>Inversion</h3><br />
+            There is no division in matrix calculations but we can have something that performs almost similar.<br />
+            Inverse of a square matrix A is denoted by \(A^{-1}\) which is a square matrix of same dimentions and has the following property:
+            \[A^{-1} \cdot A = A \cdot A^{-1} = I\]
+            The line above also implicates the fact that:
+            \[(A^{-1})^{-1} = A\]
+            Matrices that have a determinant of zero are not invertible.
+            Inverse of a matrix could be derived by the following equation:<br />
+            \[A_{ij}^{-1} = \frac{(-1)^{i+j}}{det(A)}det(A^{ji})\]
+            \(A^{ij}\) is defined as it previously had been in last section.<br />
+            example: \[ \begin{bmatrix} A & B \\ C & D \end{bmatrix} ^ {-1} = \frac{1}{AD - BC}\begin{bmatrix} D & - B \\ - C & A \end{bmatrix} \]
+            Inversion gives us alot of capabilities. Let's try solving linear equation systems with it.<br />
+            \[ a_{11} x_1 + a_{12} x_2 + ... + a_{1m} x_m = y_1 \]
+            \[ a_{21} x_1 + a_{22} x_2 + ... + a_{2m} x_m = y_2 \]
+            \[ ... \]
+            \[ a_{n1} x_1 + a_{n2} x_2 + ... + a_{nm} x_m = y_m \]
+            
+            This system of equation could be compacted into one matrix equation:
+            
+            \[ 
+            
+            \begin{bmatrix}
+                a_{11} & a_{12} & . & . & . & a_{1m} \\ 
+                a_{21} & a_{22} &  &  &  & a_{2m} \\
+                . &  & . &  &  & . \\
+                . &  &  & . &  & . \\
+                . &  &  &  & . & . \\
+                a_{11} & a_{12} & . & . & . & a_{nm}
+            \end{bmatrix}
+            
+            \begin{bmatrix}x_1 \\ x_2 \\ . \\ . \\ . \\ x_m \end{bmatrix}
+            =
+            \begin{bmatrix}y_1 \\ y_2 \\ . \\ . \\ . \\ y_m\end{bmatrix} \]
+
+            \[A\overrightarrow{x} = \overrightarrow{y}\]
+            where \(\overrightarrow{x}\) and \(\overrightarrow{y}\) are m-dimentional vectors.
+            \(\overrightarrow{x}\) could be found by multiplying the inverse of A to both sides.
+            be careful: we are multiplying A by both sides not both sides by A. these are different.(\(AB = BA\) is not always a correct statement)<br /><br />
+            <h2>Coupled oscillations</h2><br />
+            Assume the following system constructed with two point masses with mass m and 2m and three springs with spring constants of k.<br />
+            <img src="./Matrices_pic1.png" /><br />
+            We define \(x_1\) and \(x_2\) as the displacement of left and right mass to left.
+            Equations of motion:<br />
+            \[  m\ddot{x_1} = -2kx_1 + kx_2 \]
+            \[  2m\ddot{x_2} = -2kx_2 + kx_1\]
+            which could be written as:
+            \[
+            \begin{bmatrix}\ddot{x_1} \\ \ddot{x_2}\end{bmatrix} = \frac{k}{m} \begin{bmatrix} -2 & 1 \\ -1 & \frac{1}{2} \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+            \]
+            consider that the system is oscillating in a mode which means each mass is oscillating harmonically with some frequency.
+            \[ -\omega^2\begin{bmatrix}x_1 \\ x_2\end{bmatrix}\ = \frac{k}{m} \begin{bmatrix} -2 & 1 \\ -1 & \frac{1}{2} \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \]
+            \[ \Rightarrow -\omega^2\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \frac{k}{m} \begin{bmatrix} -2 & 1 \\ -1 & \frac{1}{2} \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \]
+            \[ \Rightarrow 0 = \begin{bmatrix} \omega^2 - 2 \frac{k}{m} & \frac{k}{m} \\ -\frac{k}{m} & \omega^2+\frac{k}{2m} \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = A \overrightarrow{x}\]
+            \[ A\overrightarrow{x} = 0 \]
+            If det(A) is not zero then we can multiply each side by \(A^{-1}\) which would give \(\overrightarrow{x} = 0\) and that is an obvious mode which we are not intending to find.<br />
+            Other modes would occur when det(A) is zero. which means:
+            \[(\omega^2-2\frac{k}{m})(\omega^2+\frac{k}{2m}) + \frac{k^2}{m^2} = 0\]
+            \[\omega^4 - \frac{3k}{2m}\omega^2 = 0 \Rightarrow \omega_1 = \sqrt{\frac{3k}{2m}} , \omega_2 = 0 \]
+        </div>
+    </body>
+
+</html>

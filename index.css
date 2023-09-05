@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+}
+
+
+.navbar {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
+    display: flex;
+    border-bottom: solid black 1px;
+    align-items: center;
+    font-size: 1vh;
+}
+
+.navbar .links {
+    margin-left: auto;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 6px;
+    margin-left: 20px;
+    color: rgb(177, 177, 177);
+}
+
+.navbar h1 {
+    color: black;
+}
+
+.navbar a:hover {
+    color: rgb(173, 85, 255);
+}
+
+.contentsTable {
+    padding: 3%;
+    border-radius: 3vw;
+    background-color: rgb(225, 194, 255);
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    display: grid;
+}
+
+.docTitle {
+    margin-left: 5%;
+    text-decoration: none;
+    color: rgb(142, 142, 142);
+    font-size: 1vw;
+}
+
+.branch {
+    color: black;
+    font-size: 1vw;
+}
+
+.docContent {
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: black;
+    font-size: 1.3vw;
+}
