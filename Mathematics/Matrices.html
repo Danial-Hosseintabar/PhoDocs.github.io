@@ -167,6 +167,45 @@
             Other modes would occur when det(A) is zero. which means:
             \[(\omega^2-2\frac{k}{m})(\omega^2+\frac{k}{2m}) + \frac{k^2}{m^2} = 0\]
             \[\omega^4 - \frac{3k}{2m}\omega^2 = 0 \Rightarrow \omega_1 = \sqrt{\frac{3k}{2m}} , \omega_2 = 0 \]
+            \(\omega_2\) being zero indicates presence of a linear mode. Thus the general solution regarding these modes for this system is:
+            \[\begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}A_1 \\ A_2\end{bmatrix}cos{(t\sqrt{\frac{3k}{2m}} + \phi)} + \begin{bmatrix}B_1 \\ B_2\end{bmatrix} (Ct + D) \]
+            By substituding each mode into the motion equation we will find the ration between amplitudes
+            \[ \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}2 \\ 1\end{bmatrix}Acos{(t\sqrt{\frac{3k}{2m}} + \phi )} + \begin{bmatrix}1 \\ 2\end{bmatrix} (Ct + D) \]
+            <h2>Eigen value and eigen vector</h2><br />
+            Assume there is a square matrix A, and we want to find every \( \overrightarrow{x} \) that will hold the following equation for some number \lambda:
+            \[A\overrightarrow{x}=\lambda \overrightarrow{x}\]
+            Keep in mind that only the direction of \( \overrightarrow{x} \) matters and parrallel vectors are considered the same in this problem.
+            The set of \(\overrightarrow{x}\) holding the equation are called eigen-vectors and a same-sized set of lambdas are assigned to them which is called eigen-values.<br /><br />
+            <h3>finding eigen values</h3><br />
+            rewriting the equation with identity matrix will give the following equation:
+            \[A\overrightarrow{x} = \lambda I \overrightarrow{x}\]
+            \[(A-\lambda I)\overrightarrow{x}=0\]
+            Now we can assert that \(\overrightarrow{x} = 0\) or if it is not; then A is not invertible.<br />
+            We are looking for non-zero vectors, therefore, A should not be invertible which means det(A) = 0<br />
+            If A is an n by n matrix then an equation of degree n will be derived, hence, you will find n eigen value.<br /><br />
+            <h3>finding eigen vectors</h3><br />
+            Finding eigen vectors is pretty straigt forward, insert each eigen value and sovle for x; you can the ratio between x's elements which is enough.<br /><br />
+            <h2>Power</h2><br />
+            How can we calculate \(A^k\) when A is an \(n \times n\) matrix?
+            Let's First find something interesting. Let's define an \(n \times n\) matrix Q. Q is constructed by putting the column-matrices \(v_1\), \(v_2\), ..., \(v_n\).
+            \[Q_{n \times n} = \begin{bmatrix} \overrightarrow{v_1} && \overrightarrow{v_2} && ... && \overrightarrow{v_n} \end{bmatrix}\]
+            Now let's calculate AQ:
+            \[AQ = \begin{bmatrix}A\overrightarrow{v_1} && A\overrightarrow{v_2} && ... && A\overrightarrow{v_n} \end{bmatrix} \]
+            \[= \begin{bmatrix} \lambda_1\overrightarrow{v_1} && \lambda_2\overrightarrow{v_2} && ... && \lambda_n\overrightarrow{v_n} \end{bmatrix} \]
+            \[= \begin{bmatrix} \overrightarrow{v_1} && \overrightarrow{v_2} && ... && \overrightarrow{v_n} \end{bmatrix} \begin{bmatrix} \lambda 1 & 0 & 0 &  & 0 \\ 0 & \lambda_2 & 0 & ... & 0 \\ 0 & 0 & \lambda_3 &  & 0 \\ & & . & & \\ & & . & & \\ & & . & & \\ 0 & 0 & 0 & ... & \lambda_n \end{bmatrix} \]
+            Now we define the diagonal matrix \(\Lambda\):
+            \[\Lambda_{ij} = \begin{cases}\lambda_i & i = j \\ 0 & i \neq j \end{cases}\]
+            So we can compact previous result in a small equation:
+            \[AQ = Q\Lambda\]
+            And with this result we can calculate A to any power with ease.
+            \[A^k = (Q\Lambda Q^{-1})^k\]
+            \[=(Q\Lambda Q^{-1}) (Q\Lambda Q^{-1}) ... (Q\Lambda Q^{-1})\]
+            \[=Q \Lambda ( Q^{-1} Q ) \Lambda ( Q^{-1} Q ) ... ( Q^{-1} Q ) \Lambda Q^{-1}\]
+            \[=Q \Lambda I \Lambda I ... \Lambda Q^{-1} = Q \Lambda ^ k Q^{-1}\]
+            \[= Q \begin{bmatrix} \lambda_1^k & 0 & 0 &  & 0 \\ 0 & \lambda_2^k & 0 & ... & 0 \\ 0 & 0 & \lambda_3^k &  & 0 \\ & & . & & \\ & & . & & \\ & & . & & \\ 0 & 0 & 0 & ... & \lambda_n^k \end{bmatrix} Q ^ {-1} \]
+            <br /><h3>Example problem</h3><br />
+            
+            
         </div>
     </body>
 
