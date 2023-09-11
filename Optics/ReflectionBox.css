@@ -1,0 +1,11 @@
+img {
+    display: block;
+    position: static;
+    min-width: 300px;
+    margin: auto;
+    padding: 10px;
+}
+
+.figure {
+    width: 50%;
+}
